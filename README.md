@@ -1,12 +1,14 @@
-The jenkins-agent package is vailable at: https://launchpad.net/~canonical-is-devops/+archive/ubuntu/jenkins-agent-charm
+This repository contains the debian packaging of the `jenkins-agent` entrypoint script. It is currently meant to be used by the (jenkins-agent machine charm)[https://github.com/canonical/jenkins-agent-operator] but it can be used as a standalone package to help bootstrapping a jenkins agent on bare-metal. The package ships both a systemd service and the entrypoint executable located at `/usr/bin/jenkins-agent`
 
-# Installation
-Follow the instruction in the PPA archive to install the package
+## Configure systemd service 
+The systemd service can be configured via a configuration file.
 ```
-sudo add-apt-repository ppa:tphan025/ppa
-sudo apt update
-sudo apt install jenkins-agent
+# File: /etc/systemd/system/jenkins-agent.service.d/override.conf
+[Service]
+Environment="JENKINS_SECRET=secret"
+Environment="JENKINS_URL=url"
+Environment="JENKINS_AGENT=node-name"
 ```
 
-# Configuration
-The jenkins-agent service requires 3 environment variables to be set: `JENKINS_URL`, `JENKINS_AGENT` and `JENKINS_TOKEN`
+## Configure executable
+`JENKINS_URL=url JENKINS_SECRET=secret JENKINS_AGENT=node-name /usr/bin/jenkins-agent`
