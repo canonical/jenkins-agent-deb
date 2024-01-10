@@ -1,0 +1,9 @@
+[Unit]
+Description=Jenkins inbound agent
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/jenkins-agent
+
+[Install]
+WantedBy=multi-user.target

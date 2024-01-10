@@ -1,0 +1,7 @@
+debian/jenkins-agent*debhelper*
+debian/jenkins-agent*substvars
+debian/jenkins-agent
+debian/*debhelper
+debian/*build-stamp*
+debian/files
+debian/tmp

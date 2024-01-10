@@ -1,0 +1,12 @@
+Source: jenkins-agent
+Section: java
+Priority: optional
+Maintainer: Phan Trung Thanh <trung.thanh.phan@canonical.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.1
+
+Package: jenkins-agent
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Minimal jenkins agent package.
+  Available as a standalone binary or a systemd service
