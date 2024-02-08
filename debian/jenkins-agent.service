@@ -4,6 +4,7 @@ Description=Jenkins inbound agent
 [Service]
 Type=simple
 ExecStart=/usr/bin/jenkins-agent
+ExecStopPost=rm -rf /var/lib/jenkins/.ready
 
 [Install]
 WantedBy=multi-user.target
