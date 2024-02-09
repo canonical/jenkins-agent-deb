@@ -1,3 +1,10 @@
+jenkins-agent (1.0.5) jammy; urgency=medium
+
+  * Add ExecStopPost to .service to cleanup after stopping
+  * to avoid reporting wrong status.
+
+ -- tphan025 <trung.thanh.phan@canonical.com>  Thu, 08 Feb 2024 16:52:04 +0100
+
 jenkins-agent (1.0.4) jammy; urgency=medium
 
   * Fixes to the jenkins-agent script. Add logging. Extend timeout when
