@@ -4,7 +4,7 @@ StartLimitIntervalSec=5m
 
 [Service]
 Type=simple
-Restart=on-failure
+Restart=always
 RestartSec=1s
 ExecStart=/usr/bin/jenkins-agent
 ExecStopPost=rm -rf /var/lib/jenkins/.ready
