@@ -1,9 +1,3 @@
-jenkins-agent (1.0.6) jammy; urgency=medium
-
-  * Add auto restart for systemd service
-
- -- tphan025 <trung.thanh.phan@canonical.com>  Thu, 07 Mar 2024 12:59:04 +0100
-
 jenkins-agent (1.0.5) jammy; urgency=medium
 
   * Add ExecStopPost to .service to cleanup after stopping
