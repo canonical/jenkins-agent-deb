@@ -1,37 +1,6 @@
-jenkins-agent (1.0.5) jammy; urgency=medium
+jenkins-agent-1.0.5 (1) jammy; urgency=medium
 
   * Add ExecStopPost to .service to cleanup after stopping
   * to avoid reporting wrong status.
 
  -- tphan025 <trung.thanh.phan@canonical.com>  Thu, 08 Feb 2024 16:52:04 +0100
-
-jenkins-agent (1.0.4) jammy; urgency=medium
-
-  * Fixes to the jenkins-agent script. Add logging. Extend timeout when
-  * fetching agent.jar.
-
- -- tphan025 <trung.thanh.phan@canonical.com>  Wed, 10 Jan 2024 19:58:26 +0100
-
-jenkins-agent (1.0.3) jammy; urgency=medium
-
-  * Fix changelog
-
- -- tphan025 <trung.thanh.phan@canonical.com>  Thu, 14 Dec 2023 02:55:40 +0100
-
-jenkins-agent (1.0.2) jammy; urgency=medium
-
-  * Update section field in source stanza
-
- -- tphan025 <trung.thanh.phan@canonical.com>  Thu, 14 Dec 2023 02:47:52 +0100
-
-jenkins-agent (1.0.1) jammy; urgency=medium
-
-  * Update service type
-
- -- tphan025 <trung.thanh.phan@canonical.com>  Thu, 14 Dec 2023 02:46:00 +0100
-
-jenkins-agent (1.0.0) jammy; urgency=medium
-
-  * Initial release.
-
- -- tphan025 <trung.thanh.phan@canonical.com>  Wed, 13 Dec 2023 17:13:15 +0100
