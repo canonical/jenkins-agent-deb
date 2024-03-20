@@ -1,5 +1,5 @@
-jenkins-agent-1.0.7 (1.0.7) jammy; urgency=medium
+jenkins-agent-1.0.8 (1.0.8) jammy; urgency=medium
 
-  * Change restart mode to always
+  * Fix systemd service install issue
 
  -- tphan025 <trung.thanh.phan@canonical.com>  Thu, 07 Mar 2024 12:59:04 +0100
