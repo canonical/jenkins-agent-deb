@@ -8,7 +8,7 @@ pipeline {
             steps {
                 sh'''#!/bin/bash
                     echo "$(hostname) $(date) : Running in $(pwd) as $(whoami)"
-                    debuild -us -uc
+                    echo "y" | debuild -i -us -uc
                 '''
             }
         }
