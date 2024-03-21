@@ -1,6 +1,7 @@
 [Unit]
 Description=Jenkins inbound agent
-StartLimitIntervalSec=5m
+StartLimitIntervalSec=infinity
+StartLimitBurst=60
 
 [Service]
 Type=simple
