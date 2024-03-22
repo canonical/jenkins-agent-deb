@@ -1,10 +1,11 @@
 [Unit]
 Description=Jenkins inbound agent
-StartLimitIntervalSec=5m
+StartLimitIntervalSec=infinity
+StartLimitBurst=60
 
 [Service]
 Type=simple
-Restart=on-failure
+Restart=always
 RestartSec=1s
 ExecStart=/usr/bin/jenkins-agent
 ExecStopPost=rm -rf /var/lib/jenkins/.ready

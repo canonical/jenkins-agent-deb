@@ -9,4 +9,4 @@ override_dh_installinit:
 	dh_installinit --name=jenkins-agent
 
 override_dh_installsystemd:
-	dh_installsystemd --no-start
+	dh_installsystemd --no-start --name=jenkins-agent

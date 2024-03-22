@@ -1,5 +1,5 @@
-jenkins-agent-1.0.6 (1.0.6) jammy; urgency=medium
+jenkins-agent-1.0.9 (1.0.9-patch1) jammy; urgency=medium
 
-  * Add auto restart for systemd service
+  * Correctly manage service restart, set interval to infinity and burst to 60
 
  -- tphan025 <trung.thanh.phan@canonical.com>  Thu, 07 Mar 2024 12:59:04 +0100
