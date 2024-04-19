@@ -1,4 +1,4 @@
-jenkins-agent-1.0.10 (1.0.10-patch1) jammy; urgency=medium
+jenkins-agent-1.0.10 (1.0.10) jammy; urgency=medium
 
   * Set restart interval to 5s
 
