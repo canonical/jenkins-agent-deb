@@ -6,7 +6,7 @@ StartLimitBurst=60
 [Service]
 Type=simple
 Restart=always
-RestartSec=1s
+RestartSec=5s
 ExecStart=/usr/bin/jenkins-agent
 ExecStopPost=rm -rf /var/lib/jenkins/.ready
 
