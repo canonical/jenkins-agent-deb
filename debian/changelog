@@ -1,5 +1,5 @@
-jenkins-agent-1.0.9 (1.0.9-patch1) jammy; urgency=medium
+jenkins-agent-1.0.10 (1.0.10-patch1) jammy; urgency=medium
 
-  * Correctly manage service restart, set interval to infinity and burst to 60
+  * Set restart interval to 5s
 
  -- tphan025 <trung.thanh.phan@canonical.com>  Thu, 07 Mar 2024 12:59:04 +0100

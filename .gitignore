@@ -1,6 +1,6 @@
-debian/jenkins-agent-1.0.9*debhelper*
-debian/jenkins-agent-1.0.9*substvars
-debian/jenkins-agent-1.0.9
+debian/jenkins-agent-*debhelper*
+debian/jenkins-agent-*substvars
+debian/jenkins-agent-1.0.10
 debian/*debhelper
 debian/*build-stamp*
 debian/files
