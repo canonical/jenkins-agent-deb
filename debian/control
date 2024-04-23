@@ -1,11 +1,11 @@
-Source: jenkins-agent-1.0.9
+Source: jenkins-agent-1.0.10
 Section: java
 Priority: optional
 Maintainer: Phan Trung Thanh <trung.thanh.phan@canonical.com>
 Build-Depends: debhelper-compat (= 13)
 Standards-Version: 4.6.1
 
-Package: jenkins-agent-1.0.9
+Package: jenkins-agent-1.0.10
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Minimal jenkins agent package.
