@@ -12,3 +12,5 @@ Environment="JENKINS_AGENT=node-name"
 
 ## Configure executable
 `JENKINS_URL=url JENKINS_SECRET=secret JENKINS_AGENT=node-name /usr/bin/jenkins-agent`
+
+# Test
