@@ -1,0 +1,35 @@
+name: Publish package
+
+on:
+  push:
+    # branches:
+    #   - main
+
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  publish-ppa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create tarball
+        run: |
+          tar \
+            --exclude='.github' \
+            --exclude='.git' \
+            --exclude=Readme.md \
+            --exclude='debian' \
+            --exclude='.gitignore' \
+            -czf jenkins-agent-deb.tar.gz .
+      - name: Publish PPA Package
+        uses: yuezk/publish-ppa-package@v2.0.1      
+        with:
+          repository: "canonical-is-devops/jenkins-agent-charm"
+          gpg_private_key: ${{ secrets.PPA_GPG_PRIVATE_KEY }}
+          tarball: ./jenkins-agent-deb.tar.gz
+          deb_email: "canonical-is-devops@launchpad.net"
+          deb_fullname: "jenkins-agent-charm"
+          series: "focal jammy noble"
