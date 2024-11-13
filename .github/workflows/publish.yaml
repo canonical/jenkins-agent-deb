@@ -1,0 +1,52 @@
+name: Publish package
+
+on:
+  push:
+    # branches:
+    #   - main
+
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  publish-deb:
+    name: Publish deb
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4.2.2
+    - name: Install packages
+      run: apt install build-essential devscripts debhelper
+    - name: Add changelog
+      # Squash merge PR title & description
+      run: dch -i -n ${{ github.event.merge_group.head_commit.message }}
+    - name: Build package
+      run: debuild -i -us -uc -b
+    - name: Extract package files
+      id: get_package_files
+      run: |
+        set -e 
+        # Find the .deb file in the upper directory
+        DEB_FILE=$(find .. -maxdepth 1 -name "*.deb")
+        DEB_CHANGES_FILE=$(find .. -maxdepth 1 -name "*.changes")
+
+        # Check if a .deb file was found
+        if [ -z "$DEB_FILE" ]; then
+          echo "No .deb file found in the upper directory."
+          exit 1
+        else
+          echo "Generated .deb file: $DEB_FILE"
+        fi
+        echo "DEB_FILE_NAME=$DEB_FILE" >> "$GITHUB_OUTPUT"
+        echo "DEB_CHANGES_FILE_NAME=$DEB_CHANGES_FILE" >> "$GITHUB_OUTPUT"
+    - name: Test package
+      run: |
+        sudo dpkg -i ${{ steps.get_package_files.outputs.DEB_FILE_NAME }}
+    - name: Build, sign and upload
+      env:
+        GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+      run: |
+        debuild -i -us -uc -S
+        debsign -k "$GPG_KEY_ID" {{ steps.get_package_files.outputs.DEB_CHANGES_FILE_NAME }}
+        dput ppa:canonical-is-devops/jenkins-agent-charm {{ steps.get_package_files.outputs.DEB_CHANGES_FILE_NAME }}
