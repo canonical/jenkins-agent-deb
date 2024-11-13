@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4.2.2
     - name: Install packages
-      run: apt install build-essential devscripts debhelper
+      run: sudo apt install build-essential devscripts debhelper
     - name: Add changelog
       # Squash merge PR title & description
       run: dch -i -n ${{ github.event.merge_group.head_commit.message }}
