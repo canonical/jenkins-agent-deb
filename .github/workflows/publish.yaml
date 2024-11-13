@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   publish-ppa:
-    uses: yuezk/publish-ppa-package@v2
+    uses: yuezk/publish-ppa-package@v2.0.1
     with:
       repository: "canonical-is-devops/jenkins-agent-charm"
       gpg_private_key: ${{ secrets.PPA_GPG_PRIVATE_KEY }}
