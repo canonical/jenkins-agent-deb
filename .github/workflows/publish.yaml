@@ -21,7 +21,10 @@ jobs:
         sudo apt update
         sudo apt install build-essential devscripts debhelper
     - name: Add changelog
-      run: DEBEMAIL="canonical-is-devops@lanchpad.net" dch -i
+      # Squash merge PR title & description
+      run: |
+        MESSAGE=${{ github.event.merge_group.head_commit.message }}
+        DEBEMAIL="canonical-is-devops@lanchpad.net" dch -i ${{ github.event.merge_group.head_commit.message || 'test' }}
     - name: Build package
       run: debuild -i -us -uc -b
     - name: Extract package files
