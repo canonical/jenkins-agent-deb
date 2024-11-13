@@ -29,7 +29,7 @@ system used for packaging. Example of debian/control for jenkins-agent
 Source: jenkins-agent
 Section: java
 Priority: optional
-Maintainer: Phan Trung Thanh <trung.thanh.phan@canonical.com>
+Maintainer: <Maintainer> <reacheable email>
 Build-Depends: debhelper-compat (= 13)
 Standards-Version: 4.6.1
 
@@ -101,5 +101,5 @@ sudo dpkg -i ../jenkins-agent_1.0.5_amd64.deb
 ```
 debuild -i -us -uc -S
 debsign -k <gpg_key_id> ../jenkins-agent_1.0.5_source.changes
-dput ppa:canonical-is-devops/<ppa_name> ../jenkins-agent_1.0.5_source.changes
+dput ppa:<target_ppa>/<ppa_name> ../jenkins-agent_1.0.5_source.changes
 ```
