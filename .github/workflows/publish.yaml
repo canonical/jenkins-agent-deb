@@ -12,8 +12,6 @@ concurrency:
 
 jobs:
   publish-ppa:
-    name: Publish PPA
-    runs-on: ubuntu-latest
     uses: yuezk/publish-ppa-package@v2
     with:
         repository: "canonical-is-devops/jenkins-agent-charm"
