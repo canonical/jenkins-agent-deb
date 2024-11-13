@@ -14,9 +14,9 @@ jobs:
   publish-ppa:
     uses: yuezk/publish-ppa-package@v2
     with:
-        repository: "canonical-is-devops/jenkins-agent-charm"
-        gpg_private_key: ${{ secrets.PPA_GPG_PRIVATE_KEY }}
-        tarball: canonical-is-devops/jenkins-agent-charm/.build/tarball/*.tar.gz
-        deb_email: "canonical-is-devops@launchpad.net"
-        deb_fullname: "jenkins-agent-charm"
-        series: "focal jammy noble"
+      repository: "canonical-is-devops/jenkins-agent-charm"
+      gpg_private_key: ${{ secrets.PPA_GPG_PRIVATE_KEY }}
+      tarball: canonical-is-devops/jenkins-agent-charm/.build/tarball/*.tar.gz
+      deb_email: "canonical-is-devops@launchpad.net"
+      deb_fullname: "jenkins-agent-charm"
+      series: "focal jammy noble"
